@@ -1,0 +1,125 @@
+## HW4
+
+### a)
+Kyungjin Cho
+kcho36@wisc.edu
+
+### b)
+Same as the hw2, I have used the correlation to the distance measure using the pearson method, which the equation equals to $r = \frac{n(\sum xy)-(\sum x)(\sum y)}{\sqrt{[n\sum {x^2}-(\sum x^2)][n\sum {y^2}-(\sum y^2)]}}$. I have used this method because the pearson method  works with linear relationship better than spearman method. The most difficulty I have faced is that the program ran very slow, so I had to edit it a lot and test it with smaller datasets.  
+
+### c)
+```{r}
+library(ggplot2)
+library("FITSio")
+
+lists = read.csv('/Users/irenecho/Desktop/hw4/hw4best100.csv')
+###
+cB58 = readFrameFromFITS('/Users/irenecho/Desktop/hw4/cB58_Lyman_break.fit')
+files = list.files("/Users/irenecho/Desktop/hw4/data")
+```
+
+### TOP1:
+```{r}
+noisy = readFrameFromFITS(paste("/Users/irenecho/Desktop/hw4/data", lists$spectrumID[1], sep = "/"))
+a = scale(noisy[,1])
+b = c(rep(0,lists$i[1]-1),scale(cB58[,2]))
+df = data.frame(index = c(seq(length(a)),seq(length(b))), flux = c(a,b), 
+                  category = c(rep(as.character(lists$spectrumID[1]),length(a)),rep('cB58',length(b))))
+ggplot(df,aes(x = index,y = flux)) + geom_line(aes(color = category))
+```
+
+### TOP2:
+```{r}
+noisy = readFrameFromFITS(paste("/Users/irenecho/Desktop/hw4/data", lists$spectrumID[2], sep = "/"))
+a = scale(noisy[,1])
+b = c(rep(0,lists$i[1]-1),scale(cB58[,2]))
+df = data.frame(index = c(seq(length(a)),seq(length(b))), flux = c(a,b), 
+                  category = c(rep(as.character(lists$spectrumID[1]),length(a)),rep('cB58',length(b))))
+ggplot(df,aes(x = index,y = flux)) + geom_line(aes(color = category))
+```
+
+### TOP3:
+```{r}
+noisy = readFrameFromFITS(paste("/Users/irenecho/Desktop/hw4/data", lists$spectrumID[3], sep = "/"))
+a = scale(noisy[,1])
+b = c(rep(0,lists$i[1]-1),scale(cB58[,2]))
+df = data.frame(index = c(seq(length(a)),seq(length(b))), flux = c(a,b), 
+                  category = c(rep(as.character(lists$spectrumID[1]),length(a)),rep('cB58',length(b))))
+ggplot(df,aes(x = index,y = flux)) + geom_line(aes(color = category))
+```
+
+### TOP4:
+```{r}
+noisy = readFrameFromFITS(paste("/Users/irenecho/Desktop/hw4/data", lists$spectrumID[4], sep = "/"))
+a = scale(noisy[,1])
+b = c(rep(0,lists$i[1]-1),scale(cB58[,2]))
+df = data.frame(index = c(seq(length(a)),seq(length(b))), flux = c(a,b), 
+                  category = c(rep(as.character(lists$spectrumID[1]),length(a)),rep('cB58',length(b))))
+ggplot(df,aes(x = index,y = flux)) + geom_line(aes(color = category))
+```
+
+### TOP5:
+```{r}
+noisy = readFrameFromFITS(paste("/Users/irenecho/Desktop/hw4/data", lists$spectrumID[5], sep = "/"))
+a = scale(noisy[,1])
+b = c(rep(0,lists$i[1]-1),scale(cB58[,2]))
+df = data.frame(index = c(seq(length(a)),seq(length(b))), flux = c(a,b), 
+                  category = c(rep(as.character(lists$spectrumID[1]),length(a)),rep('cB58',length(b))))
+ggplot(df,aes(x = index,y = flux)) + geom_line(aes(color = category))
+```
+
+### TOP6:
+```{r}
+noisy = readFrameFromFITS(paste("/Users/irenecho/Desktop/hw4/data", lists$spectrumID[6], sep = "/"))
+a = scale(noisy[,1])
+b = c(rep(0,lists$i[1]-1),scale(cB58[,2]))
+df = data.frame(index = c(seq(length(a)),seq(length(b))), flux = c(a,b), 
+                  category = c(rep(as.character(lists$spectrumID[1]),length(a)),rep('cB58',length(b))))
+ggplot(df,aes(x = index,y = flux)) + geom_line(aes(color = category))
+```
+
+### TOP7:
+```{r}
+noisy = readFrameFromFITS(paste("/Users/irenecho/Desktop/hw4/data", lists$spectrumID[7], sep = "/"))
+a = scale(noisy[,1])
+b = c(rep(0,lists$i[1]-1),scale(cB58[,2]))
+df = data.frame(index = c(seq(length(a)),seq(length(b))), flux = c(a,b), 
+                  category = c(rep(as.character(lists$spectrumID[1]),length(a)),rep('cB58',length(b))))
+ggplot(df,aes(x = index,y = flux)) + geom_line(aes(color = category))
+```
+
+### TOP8:
+```{r}
+noisy = readFrameFromFITS(paste("/Users/irenecho/Desktop/hw4/data", lists$spectrumID[8], sep = "/"))
+a = scale(noisy[,1])
+b = c(rep(0,lists$i[1]-1),scale(cB58[,2]))
+df = data.frame(index = c(seq(length(a)),seq(length(b))), flux = c(a,b), 
+                  category = c(rep(as.character(lists$spectrumID[1]),length(a)),rep('cB58',length(b))))
+ggplot(df,aes(x = index,y = flux)) + geom_line(aes(color = category))
+```
+
+### TOP9:
+```{r}
+noisy = readFrameFromFITS(paste("/Users/irenecho/Desktop/hw4/data", lists$spectrumID[9], sep = "/"))
+a = scale(noisy[,1])
+b = c(rep(0,lists$i[1]-1),scale(cB58[,2]))
+df = data.frame(index = c(seq(length(a)),seq(length(b))), flux = c(a,b), 
+                  category = c(rep(as.character(lists$spectrumID[1]),length(a)),rep('cB58',length(b))))
+ggplot(df,aes(x = index,y = flux)) + geom_line(aes(color = category))
+```
+
+### TOP10:
+```{r}
+noisy = readFrameFromFITS(paste("/Users/irenecho/Desktop/hw4/data", lists$spectrumID[10], sep = "/"))
+a = scale(noisy[,1])
+b = c(rep(0,lists$i[1]-1),scale(cB58[,2]))
+df = data.frame(index = c(seq(length(a)),seq(length(b))), flux = c(a,b), 
+                  category = c(rep(as.character(lists$spectrumID[1]),length(a)),rep('cB58',length(b))))
+ggplot(df,aes(x = index,y = flux)) + geom_line(aes(color = category))
+```
+
+
+
+
+
+
